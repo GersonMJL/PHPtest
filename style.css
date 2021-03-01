@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif !important;
+}
+
+label {
+  font-weight: 600;
+}
+
+main {
+  background-color: #350175;
+  width: 100vw;
+  height: 100vh;
+}
+
+.search-div {
+  background-color: #994cf7;
+}
+
+.btn {
+  font-weight: bold;
+  color: rgb(49, 49, 49);
+  background-color: #f5f102;
+  border-color: #f5f102;
+}
+
+.btn:hover {
+  color: rgb(65, 65, 65);
+  background-color: #a8a600;
+  border-color: #a8a600;
+}
