@@ -1,5 +1,7 @@
 <?php
 
+$senha = '';
+
 $cep = (string) $_GET['value'];
 
 $cep = preg_replace('/\D/', '', $cep);
@@ -14,7 +16,7 @@ try {
     $connect = new PDO(
         'mysql:host=localhost;dbname=consultas_cep;charset=utf8mb4',
         'root',
-        '',
+        $senha,
         array(
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_PERSISTENT => false
@@ -58,6 +60,15 @@ if (!$response) {
     $stmt2->bindValue(1, $cep);
 
     $stmt2->execute();
+
+    foreach ($xml as $key => $value) {
+        echo "
+        <div class='col-12 rounded bg-dark text-white my-4 p-4'>
+        <h5 class='fw-bold text-uppercase'>" . $key . "</h5>
+        " . $value . "
+        </div>
+        ";
+    }
 
     curl_close($ch);
 } else {
